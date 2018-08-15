@@ -11,6 +11,10 @@ const connectionConfig = {
 
 const jobs = {
   deploy: {
+    plugins: ['JobLock'],
+    pluginOptions: {
+      JobLock: {}
+    },
     perform: deploy
   }
 };
@@ -18,14 +22,19 @@ const jobs = {
 const worker = new NodeResque.Worker(
   {
     connection: connectionConfig,
-    queues: ['default']
+    queues: "*"
   },
   jobs
 );
 
-const scheduler = new NodeResque.Scheduler({
-  connection: connectionConfig
-});
+const worker2 = new NodeResque.Worker(
+  {
+    connection: connectionConfig,
+    queues: "*"
+  },
+  jobs
+);
+
 
 const queue = new NodeResque.Queue(
   {
@@ -37,13 +46,13 @@ const queue = new NodeResque.Queue(
 (async () => {
   await worker.connect();
   await worker.start();
-
-  await scheduler.connect();
-  await scheduler.start();
+  await worker2.connect();
+  await worker2.start();
 
   await queue.connect();
 
   for (let i = 0; i < 5; i++) {
-    queue.enqueue('default', 'deploy', [1]);
+    queue.enqueue('app_one', 'deploy', [i, 'app_one']);
+    queue.enqueue('app_two', 'deploy', [i, 'app_two']);
   }
 })();

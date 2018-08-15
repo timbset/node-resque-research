@@ -31,10 +31,6 @@ const worker = new NodeResque.MultiWorker(
   jobs
 );
 
-const scheduler = new NodeResque.Scheduler({
-  connection: connectionConfig
-});
-
 const queue = new NodeResque.Queue(
   {
     connection: connectionConfig
@@ -44,10 +40,6 @@ const queue = new NodeResque.Queue(
 
 (async () => {
   await worker.start();
-
-  await scheduler.connect();
-  await scheduler.start();
-
   await queue.connect();
 
   for (let i = 0; i < 5; i++) {
