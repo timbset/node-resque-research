@@ -1,0 +1,19 @@
+{
+  "name": "node-resque-research",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/timbset/node-resque-research.git",
+  "author": "timbset <timophey.trainenkov@devexpress.com>",
+  "license": "MIT",
+  "scripts": {
+    "worker": "babel-node worker",
+    "multi-worker": "babel-node multi-worker"
+  },
+  "dependencies": {
+    "node-resque": "^5.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
