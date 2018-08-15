@@ -7,9 +7,11 @@
   "license": "MIT",
   "scripts": {
     "worker": "babel-node worker",
-    "multi-worker": "babel-node multi-worker"
+    "multi-worker": "babel-node multi-worker",
+    "bull": "babel-node bull/test"
   },
   "dependencies": {
+    "bull": "^3.4.6",
     "node-resque": "^5.4.1"
   },
   "devDependencies": {

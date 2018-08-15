@@ -549,7 +549,7 @@ binary-extensions@^1.0.0:
   version "1.11.0"
   resolved "http://npm.resolve.sh:10080/binary-extensions/-/binary-extensions-1.11.0.tgz#46aa1751fb6a2f93ee5e689bb1087d4b14c6c205"
 
-bluebird@^3.3.4:
+bluebird@^3.3.4, bluebird@^3.5.0:
   version "3.5.1"
   resolved "http://npm.resolve.sh:10080/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
 
@@ -574,6 +574,18 @@ browserslist@^3.2.6:
   dependencies:
     caniuse-lite "^1.0.30000844"
     electron-to-chromium "^1.3.47"
+
+bull@^3.4.6:
+  version "3.4.6"
+  resolved "http://npm.resolve.sh:10080/bull/-/bull-3.4.6.tgz#ee1d91bb3430af07c2bc7ca88dda87eed3e58dd0"
+  dependencies:
+    bluebird "^3.5.0"
+    cron-parser "^2.5.0"
+    debuglog "^1.0.0"
+    ioredis "^3.1.4"
+    lodash "^4.17.4"
+    semver "^5.5.0"
+    uuid "^3.2.1"
 
 caniuse-lite@^1.0.30000844:
   version "1.0.30000877"
@@ -640,15 +652,32 @@ core-util-is@~1.0.0:
   version "1.0.2"
   resolved "http://npm.resolve.sh:10080/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
+cron-parser@^2.5.0:
+  version "2.5.0"
+  resolved "http://npm.resolve.sh:10080/cron-parser/-/cron-parser-2.5.0.tgz#ec1385a3aa8c63624256789ce2ecfa338384676a"
+  dependencies:
+    is-nan "^1.2.1"
+    moment-timezone "^0.5.0"
+
 debug@^2.1.2, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
   resolved "http://npm.resolve.sh:10080/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
     ms "2.0.0"
 
+debuglog@^1.0.0:
+  version "1.0.1"
+  resolved "http://npm.resolve.sh:10080/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
+
 deep-extend@^0.6.0:
   version "0.6.0"
   resolved "http://npm.resolve.sh:10080/deep-extend/-/deep-extend-0.6.0.tgz#c4fa7c95404a17a9c3e8ca7e1537312b736330ac"
+
+define-properties@^1.1.1:
+  version "1.1.3"
+  resolved "http://npm.resolve.sh:10080/define-properties/-/define-properties-1.1.3.tgz#cf88da6cbee26fe6db7094f61d870cbd84cee9f1"
+  dependencies:
+    object-keys "^1.0.12"
 
 delegates@^1.0.0:
   version "1.0.0"
@@ -842,7 +871,7 @@ invariant@^2.2.2:
   dependencies:
     loose-envify "^1.0.0"
 
-ioredis@^3.2.2:
+ioredis@^3.1.4, ioredis@^3.2.2:
   version "3.2.2"
   resolved "http://npm.resolve.sh:10080/ioredis/-/ioredis-3.2.2.tgz#b7d5ff3afd77bb9718bb2821329b894b9a44c00b"
   dependencies:
@@ -919,6 +948,12 @@ is-glob@^2.0.0, is-glob@^2.0.1:
   resolved "http://npm.resolve.sh:10080/is-glob/-/is-glob-2.0.1.tgz#d096f926a3ded5600f3fdfd91198cb0888c2d863"
   dependencies:
     is-extglob "^1.0.0"
+
+is-nan@^1.2.1:
+  version "1.2.1"
+  resolved "http://npm.resolve.sh:10080/is-nan/-/is-nan-1.2.1.tgz#9faf65b6fb6db24b7f5c0628475ea71f988401e2"
+  dependencies:
+    define-properties "^1.1.1"
 
 is-number@^2.1.0:
   version "2.1.0"
@@ -1107,6 +1142,16 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
+moment-timezone@^0.5.0:
+  version "0.5.21"
+  resolved "http://npm.resolve.sh:10080/moment-timezone/-/moment-timezone-0.5.21.tgz#3cba247d84492174dbf71de2a9848fa13207b845"
+  dependencies:
+    moment ">= 2.9.0"
+
+"moment@>= 2.9.0":
+  version "2.22.2"
+  resolved "http://npm.resolve.sh:10080/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "http://npm.resolve.sh:10080/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -1184,6 +1229,10 @@ number-is-nan@^1.0.0:
 object-assign@^4.1.0:
   version "4.1.1"
   resolved "http://npm.resolve.sh:10080/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
+
+object-keys@^1.0.12:
+  version "1.0.12"
+  resolved "http://npm.resolve.sh:10080/object-keys/-/object-keys-1.0.12.tgz#09c53855377575310cca62f55bb334abff7b3ed2"
 
 object.omit@^2.0.0:
   version "2.0.1"
@@ -1372,7 +1421,7 @@ sax@^1.2.4:
   version "1.2.4"
   resolved "http://npm.resolve.sh:10080/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-semver@^5.3.0:
+semver@^5.3.0, semver@^5.5.0:
   version "5.5.0"
   resolved "http://npm.resolve.sh:10080/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
@@ -1470,6 +1519,10 @@ user-home@^1.1.1:
 util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "http://npm.resolve.sh:10080/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
+
+uuid@^3.2.1:
+  version "3.3.2"
+  resolved "http://npm.resolve.sh:10080/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
 
 v8flags@^2.1.1:
   version "2.1.1"
